@@ -1,6 +1,6 @@
 const YEAR = new Date().getFullYear()
 
-export default {
+const config = {
   footer: (
     <small style={{ display: 'block', marginTop: '8rem' }}>
       <abbr
@@ -24,5 +24,13 @@ export default {
       `}</style>
     </small>
   ),
-  readMore: false
+  readMore: false,
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.cusdis = {
+    appId: 'ba05309e-31cd-4df0-b78e-ab2d4329cf32',
+  }
+}
+
+export default config
